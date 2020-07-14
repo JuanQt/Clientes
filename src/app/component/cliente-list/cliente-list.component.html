@@ -1,0 +1,42 @@
+<br><br>
+
+<div class="btn-group">
+    <input type="text" class="form-control" id="buscar" placeholder="Buscar cliente.." [(ngModel)]='buscar'>
+    <button class="btn btn-primary" style="margin:0 0 0 20px;" (click)='consultaCliente();'>Consultar</button>
+</div>
+
+<br><br>
+
+<table class="table table-bordered">
+
+    <tr>
+        <td>dni</td>
+        <td>nombre</td>
+        <td>apellido</td>
+        <td>telefono</td>
+        <td>direccion</td>     
+        <td>Acciones</td>
+    </tr>
+
+    <tr *ngFor="let clientelista of clienteList">
+
+        <td>{{clientelista.dni}}</td>
+        <td>{{clientelista.nombre}}</td>
+        <td>{{clientelista.apellido}}</td>
+        <td>{{clientelista.telefono}}</td>
+        <td>{{clientelista.direccion}}</td>
+        <td>
+            <div class="btn-group">
+                <button type="button" (click)="onEdit(clientelista)" class="btn btn-warning  btn-sm">
+                    <i class="fas fa-pencil-alt"></i>
+                </button>
+
+                <button type="button" (click)="onDelete(clientelista.$keyRegistro)" class="btn btn-danger btn-sm">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+        </td>
+
+    </tr>
+
+</table>

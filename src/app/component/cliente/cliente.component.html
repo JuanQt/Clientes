@@ -1,0 +1,47 @@
+<br>
+<h1>Datos Cliente</h1>
+<br>
+<form #clienteForm="ngForm">
+
+  <input type="hidden" name="$keyRegistro" #$keyRegistro="ngModel"
+    [(ngModel)]="clienteService.selectedCliente.$keyRegistro">
+
+  <label for="dni"><b>Dni*</b></label>
+
+  <input class="form-control" id="dni" name="dni" #dni="ngModel"
+    [(ngModel)]="clienteService.selectedCliente.dni" placeholder="Ingrese dni">
+
+  <br>
+  <label for="nombre"><b>Nombre*</b></label>
+  <input type="text" class="form-control" name="nombre" id="nombre" #nombre="ngModel"
+    [(ngModel)]="clienteService.selectedCliente.nombre" placeholder="Ingrese nombre">
+  <br>
+
+  <label for="apellido"><b>Apellido*</b></label>
+  <input type="text" class="form-control" name="apellido" id="apellido" #apellido="ngModel"
+    [(ngModel)]="clienteService.selectedCliente.apellido" placeholder="Ingrese apellido">
+  <br>
+  <label for="telefono"><b>Telefono*</b></label>
+  <input type="text" class="form-control" name="telefono" id="telefono" #telefono="ngModel"
+    [(ngModel)]="clienteService.selectedCliente.telefono" placeholder="Ingrese telefono">
+  <br>
+  <label for="direccion"><b>Direccion*</b></label>
+  <input type="text" class="form-control" name="direccion" id="direccion" #direccion="ngModel"
+    [(ngModel)]="clienteService.selectedCliente.direccion" placeholder="Ingrese direccion">
+  <br>
+
+    <div class="text-center">
+        <div class="btn-group">
+        <button class="btn btn-outline-primary form-control" type="submit" (click)="onSubmit(clienteForm)">
+            <i class="fas fa-plus"></i> Agregar cliente
+        </button>
+        </div>
+
+        <div class="btn-group">
+        <button class="btn btn-outline-warning form-control" type="submit" (click)="onSubmit(clienteForm)">
+            <i class="fas fa-pencil-alt"></i> Actualizar cliente
+        </button>
+        </div>
+    </div>  
+
+</form>
